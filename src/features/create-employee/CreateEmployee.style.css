@@ -1,0 +1,45 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 265px;
+}
+
+.button--save-employee {
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.address {
+  margin-top: 10px;
+}
+
+.react-datepicker__day:not(.react-datepicker__day--highlighted-custom, .react-datepicker__day--keyboard-selected, .react-datepicker__day--selected) {
+  border-radius: 0.3rem;
+  background-color: rgb(var(--primary-color));
+}
+
+.react-datepicker__day--highlighted-custom:not(.react-datepicker__day--keyboard-selected) {
+  color: rgb(var(--secondary-color));
+  background-color: rgb(var(--primary-color));
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  color: rgb(var(--light-text));
+  background-color: rgb(var(--secondary-color));
+}
+
+.react-datepicker__day:hover {
+  color: rgb(var(--light-text));
+  background-color: rgb(var(--tertiary-color));
+}
+
+.react-datepicker__day--outside-month {
+  opacity: 0.3;
+}
