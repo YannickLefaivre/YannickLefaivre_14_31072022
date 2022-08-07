@@ -7,7 +7,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 265px;
+  width: 280px;
 }
 
 .button--save-employee {
@@ -17,6 +17,10 @@
 
 .address {
   margin-top: 10px;
+}
+
+.form-field__default-input--adress-fieldset {
+  width: 80%;
 }
 
 .react-datepicker__day:not(.react-datepicker__day--highlighted-custom, .react-datepicker__day--keyboard-selected, .react-datepicker__day--selected) {
@@ -31,12 +35,12 @@
 
 .react-datepicker__day--selected,
 .react-datepicker__day--keyboard-selected {
-  color: rgb(var(--light-text));
+  color: white;
   background-color: rgb(var(--secondary-color));
 }
 
 .react-datepicker__day:hover {
-  color: rgb(var(--light-text));
+  color: white;
   background-color: rgb(var(--tertiary-color));
 }
 
