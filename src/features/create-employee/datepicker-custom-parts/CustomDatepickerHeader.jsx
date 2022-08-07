@@ -11,7 +11,7 @@ const CustomDatepickerHeader = ({
   prevMonthButtonDisabled,
   nextMonthButtonDisabled,
 }) => {
-  const years = range(1990, getYear(new Date()) + 28, 1)
+  const years = range(1950, getYear(new Date()) + 29, 1)
   const months = [
     "January",
     "February",
@@ -28,15 +28,16 @@ const CustomDatepickerHeader = ({
   ]
 
   return (
-    <div className="react-datepicker__header_month-and-year-picker">
+    <div className="react-datepicker__header__month-and-year-pickers">
       <button
         type="button"
-        className="react-datepicker__header__month-and-year-picker__item react-datepicker__header__month-and-year-picker__navigation-button"
+        className="button react-datepicker__header__month-and-year-picker__item react-datepicker__header__month-and-year-picker__navigation-button"
         onClick={decreaseMonth}
         disabled={prevMonthButtonDisabled}
       >
-        <span className="fa-solid fa-caret-left react-datepicker__header__month-and-year-picker__navigation-button__icon"></span>
+        <span className="fa-solid fa-angle-left react-datepicker__header__month-and-year-picker__navigation-button__icon"></span>
       </button>
+
       <select
         className="react-datepicker__header__month-and-year-picker__item"
         value={getYear(date)}
@@ -65,11 +66,11 @@ const CustomDatepickerHeader = ({
 
       <button
         type="button"
-        className="react-datepicker__header__month-and-year-picker__item react-datepicker__header__month-and-year-picker__navigation-button"
+        className="button react-datepicker__header__month-and-year-picker__item react-datepicker__header__month-and-year-picker__navigation-button"
         onClick={increaseMonth}
         disabled={nextMonthButtonDisabled}
       >
-        <span className="fa-solid fa-caret-right react-datepicker__header__month-and-year-picker__navigation-button__icon"></span>
+        <span className="fa-solid fa-angle-right react-datepicker__header__month-and-year-picker__navigation-button__icon"></span>
       </button>
     </div>
   )
