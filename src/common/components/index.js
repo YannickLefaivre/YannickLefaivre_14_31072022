@@ -5,3 +5,4 @@ export {
   departmentOptions,
   statesOptions,
 } from "./Select"
+export { DataTableBase, SearchBar } from "./Table"
