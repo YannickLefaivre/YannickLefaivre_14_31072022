@@ -1,12 +1,15 @@
 import { useState } from "react"
-import { NavLink } from "react-router-dom"
-import { SelectBase as Select } from "../../common/components"
-import { DatePickerBase as DatePicker } from "../../common/components"
-import { FormField } from "../../common/components"
+import { useDispatch } from "react-redux"
+import { NavLink, useNavigate } from "react-router-dom"
 import {
+  SelectBase as Select,
+  DatePickerBase as DatePicker,
+  FormField,
   statesOptions,
   departmentOptions,
 } from "../../common/components"
+import { formatDate } from "../../common/utils/date"
+import { employeeActions } from "../shared"
 import "./CreateEmployee.style.css"
 
 const CreateEmployee = () => {
@@ -17,6 +20,41 @@ const CreateEmployee = () => {
     departmentOptions[0]
   )
 
+  const navigate = useNavigate()
+
+  const dispatch = useDispatch()
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    const firstName = document.getElementById("first-name")
+    const lastName = document.getElementById("last-name")
+    const street = document.getElementById("street")
+    const city = document.getElementById("city")
+    const zipCode = document.getElementById("zip-code")
+
+    const formattedDateOfBirth = formatDate(dateOfBirth)
+    const formattedstartDate = formatDate(startDate)
+
+    const employee = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      dateOfBirth: formattedDateOfBirth,
+      startDate: formattedstartDate,
+      department: selectedDepartment.value,
+      street: street.value,
+      city: city.value,
+      state: selectedState.value,
+      zipCode: zipCode.value,
+    }
+
+    dispatch(employeeActions.saveEmployee(employee))
+
+    navigate("/employee-list")
+
+    // $('#confirmation').modal(); Affiché la modale avec la lib HeadlessUIModal
+  }
+
   return (
     <>
       <div className="title">
@@ -25,7 +63,12 @@ const CreateEmployee = () => {
       <div className="container">
         <NavLink to="/employee-list">View Current Employees</NavLink>
         <h2>Create Employee</h2>
-        <form action="#" id="create-employee" className="form">
+        <form
+          action="POST"
+          id="create-employee"
+          className="form"
+          onSubmit={handleSubmit}
+        >
           <FormField label="First Name" labelFor="first-name">
             <input id="first-name" type="text" required />
           </FormField>
