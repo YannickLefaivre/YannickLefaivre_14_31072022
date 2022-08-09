@@ -1,0 +1,11 @@
+.form-field--data-table-search-bar {
+  display: flex;
+  align-items: baseline;
+  margin-top: 0;
+}
+
+.form-field__label--data-table-search-bar {
+  display: inline;
+  margin-bottom: 0;
+  margin-right: 7px;
+}
