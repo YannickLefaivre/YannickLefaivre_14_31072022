@@ -1,0 +1,24 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.button--save-employee {
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.address {
+  margin-top: 10px;
+}
+
+.form-field__default-input--adress-fieldset {
+  width: 80%;
+}
