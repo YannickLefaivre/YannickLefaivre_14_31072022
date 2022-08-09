@@ -55,4 +55,4 @@ FormField.propTypes = {
   }),
 }
 
-export default FormField
+export { FormField }

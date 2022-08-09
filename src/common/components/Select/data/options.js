@@ -1,4 +1,4 @@
-export const states = [
+export const statesOptions = [
   {
     label: "Alabama",
     value: "AL",
@@ -237,7 +237,7 @@ export const states = [
   },
 ]
 
-export const departments = [
+export const departmentOptions = [
   { label: "Sales", value: "Sales" },
   { label: "Marketing", value: "Marketing" },
   { label: "Engineering", value: "Engineering" },

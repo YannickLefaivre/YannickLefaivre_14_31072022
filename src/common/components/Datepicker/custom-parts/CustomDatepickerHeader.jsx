@@ -1,7 +1,19 @@
 import range from "lodash/range"
-import { getYear, getMonth } from "../../../common/utils/date"
+import { getYear, getMonth } from "../../../utils/date"
 import "./CustomDatepickerHeader.style.css"
 
+/**
+ * @param {Object} props
+ * @param {Date} props.date
+ * @param {CallableFunction} props.changeYear
+ * @param {CallableFunction} props.changeMonth
+ * @param {CallableFunction} props.decreaseMonth
+ * @param {CallableFunction} props.increaseMonth
+ * @param {Boolean} props.prevMonthDisabled
+ * @param {Boolean} props.nextMonthButtonDisabled
+ *
+ * @returns {JSX.Element}
+ */
 const CustomDatepickerHeader = ({
   date,
   changeYear,
@@ -76,4 +88,4 @@ const CustomDatepickerHeader = ({
   )
 }
 
-export default CustomDatepickerHeader
+export { CustomDatepickerHeader }
