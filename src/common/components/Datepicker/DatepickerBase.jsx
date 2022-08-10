@@ -1,16 +1,29 @@
+import PropTypes from "prop-types"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import { CustomDatepickerHeader } from "./custom-parts/CustomDatepickerHeader"
 import "./DatePickerBase.style.css"
 
 /**
- * @param {Object} DatePickerProps
+ * @callback handleChange
+ * @param {Date | null} date
+ * @param {React.SyntheticEvent<any, Event> | undefined} event
+ *
+ * @returns {void}
+ */
+
+/**
+ * @param {Object} [DatePickerBaseProps]
+ * @param {Date | null} [DatePickerBaseProps.selectedValue]
+ * @param {handleChange} [DatePickerBaseProps.handleChange]
  *
  * @returns {JSX.Element}
  */
-const DatePickerBase = (props) => {
+const DatePickerBase = ({ selectedValue, handleChange }) => {
   return (
     <DatePicker
+      selected={selectedValue}
+      onChange={handleChange}
       renderCustomHeader={CustomDatepickerHeader}
       highlightDates={[
         {
@@ -35,9 +48,16 @@ const DatePickerBase = (props) => {
         },
       ]}
       required
-      {...props}
     />
   )
+}
+
+DatePickerBase.propTypes = {
+  selectedValue: PropTypes.oneOfType([
+    PropTypes.instanceOf(Date),
+    PropTypes.any,
+  ]),
+  handleChange: PropTypes.func,
 }
 
 export { DatePickerBase }

@@ -79,15 +79,15 @@ const CreateEmployee = () => {
 
           <FormField label="Date of birth">
             <DatePicker
-              selected={dateOfBirth}
-              onChange={(date) => setDateOfBirth(date)}
+              selectedValue={dateOfBirth}
+              handleChange={(date) => setDateOfBirth(date)}
             />
           </FormField>
 
           <FormField label="Start date">
             <DatePicker
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
+              selectedValue={startDate}
+              handleChange={(date) => setStartDate(date)}
             />
           </FormField>
 
@@ -105,7 +105,7 @@ const CreateEmployee = () => {
             <FormField label="State">
               <Select
                 value={selectedState}
-                onChange={setSelectedState}
+                handleChange={setSelectedState}
                 options={statesOptions}
               />
             </FormField>
@@ -118,7 +118,7 @@ const CreateEmployee = () => {
           <FormField label="Department">
             <Select
               value={selectedDepartment}
-              onChange={setSelectedDepartment}
+              handleChange={setSelectedDepartment}
               options={departmentOptions}
             />
           </FormField>
