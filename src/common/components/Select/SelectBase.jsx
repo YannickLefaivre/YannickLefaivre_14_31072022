@@ -18,13 +18,13 @@ import { customSelectStyles } from "./utils/customStyles"
 
 /**
  * @param {Object} SelectProps
- * @param {*} SelectProps.value
  * @param {SelectOptions[]} SelectProps.options
+ * @param {*} [SelectProps.value]
  * @param {handleChange} [SelectProps.handleChange]
  *
  * @returns {JSX.Element}
  */
-const SelectBase = ({ value, options, handleChange }) => {
+const SelectBase = ({ options, value, handleChange }) => {
   return (
     <Select
       isSearchable={false}
@@ -48,8 +48,8 @@ const SelectBase = ({ value, options, handleChange }) => {
 }
 
 Select.propTypes = {
-  value: PropTypes.any.isRequired,
   options: PropTypes.arrayOf(PropTypes.object).isRequired,
+  value: PropTypes.any,
   handleChange: PropTypes.func,
 }
 
