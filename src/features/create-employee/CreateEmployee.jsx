@@ -33,6 +33,51 @@ const CreateEmployee = () => {
     const city = document.getElementById("city")
     const zipCode = document.getElementById("zip-code")
 
+    if (firstName.value === "") {
+      console.log("Some fields are empty")
+      return
+    }
+
+    if (lastName.value === "") {
+      console.log("Some fields are empty")
+      return
+    }
+
+    if (!dateOfBirth) {
+      console.log("Some fields are empty")
+      return
+    }
+
+    if (!startDate) {
+      console.log("Some fields are empty")
+      return
+    }
+
+    if (street.value === "") {
+      console.log("Some fields are empty")
+      return
+    }
+
+    if (city.value === "") {
+      console.log("Some fields are empty")
+      return
+    }
+
+    if (!selectedState) {
+      console.log("Some fields are empty")
+      return
+    }
+
+    if (zipCode.value === "") {
+      console.log("Some fields are empty")
+      return
+    }
+
+    if (!selectedDepartment) {
+      console.log("Some fields are empty")
+      return
+    }
+
     const formattedDateOfBirth = formatDate(dateOfBirth)
     const formattedstartDate = formatDate(startDate)
 
