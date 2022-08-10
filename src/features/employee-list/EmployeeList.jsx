@@ -1,25 +1,37 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { NavLink } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import {
   DataTableBase as DataTable,
   FormField,
   SearchBar,
 } from "../../common/components"
 import * as SearchEngine from "../../common/utils/SearchEngine"
-import { Employee, selectEmployee } from "../shared"
+import { Employee, selectEmployee, getEmployees } from "../shared"
 import "./EmployeeList.style.css"
 
 const EmployeeList = () => {
-  const employee = useSelector(selectEmployee)
-
   const [filterText, setFilterText] = useState("")
   const [resetPaginationToggle, setResetPaginationToggle] =
     useState(false)
-  const filteredEmployees = SearchEngine.filterEmployees(
-    employee,
-    filterText
-  )
+
+  const dispatch = useDispatch()
+
+  const employee = useSelector(selectEmployee)
+
+  let filteredEmployees = []
+  let employeeList = []
+
+  if (employee.data) {
+    filteredEmployees = SearchEngine.filterEmployees(
+      employee.data,
+      filterText
+    )
+
+    employeeList = filteredEmployees.map(
+      (employeeInfos) => new Employee(employeeInfos)
+    )
+  }
 
   const subHeaderComponentMemo = useMemo(() => {
     const handleClear = () => {
@@ -46,9 +58,11 @@ const EmployeeList = () => {
     )
   }, [filterText, resetPaginationToggle])
 
-  const employeeList = filteredEmployees.map(
-    (employeeInfos) => new Employee(employeeInfos)
-  )
+  useEffect(() => {
+    if (employee.data === null) {
+      dispatch(getEmployees)
+    }
+  }, [dispatch, employee.data])
 
   return (
     <>

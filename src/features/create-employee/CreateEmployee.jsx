@@ -9,7 +9,7 @@ import {
   departmentOptions,
 } from "../../common/components"
 import { formatDate } from "../../common/utils/date"
-import { employeeActions } from "../shared"
+import { saveEmployee } from "../shared"
 import "./CreateEmployee.style.css"
 
 const CreateEmployee = () => {
@@ -93,7 +93,7 @@ const CreateEmployee = () => {
       zipCode: zipCode.value,
     }
 
-    dispatch(employeeActions.saveEmployee(employee))
+    dispatch(saveEmployee(employee))
 
     navigate("/employee-list")
 
