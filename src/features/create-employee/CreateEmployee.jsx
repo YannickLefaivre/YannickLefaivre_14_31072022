@@ -9,7 +9,7 @@ import {
   departmentOptions,
 } from "../../common/components"
 import { formatDate } from "../../common/utils/date"
-import { saveEmployee } from "../shared"
+import { employeeActions } from "../shared"
 import "./CreateEmployee.style.css"
 
 const CreateEmployee = () => {
@@ -93,7 +93,7 @@ const CreateEmployee = () => {
       zipCode: zipCode.value,
     }
 
-    dispatch(saveEmployee(employee))
+    dispatch(employeeActions.save(employee))
 
     navigate("/employee-list")
 
@@ -105,9 +105,12 @@ const CreateEmployee = () => {
       <div className="title">
         <h1>HRnet</h1>
       </div>
+
       <div className="container">
         <NavLink to="/employee-list">View Current Employees</NavLink>
+
         <h2>Create Employee</h2>
+
         <form
           action="POST"
           id="create-employee"

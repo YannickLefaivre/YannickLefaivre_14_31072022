@@ -1,21 +1,24 @@
-import { useEffect, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import { NavLink } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import {
   DataTableBase as DataTable,
   FormField,
   SearchBar,
 } from "../../common/components"
 import * as SearchEngine from "../../common/utils/SearchEngine"
-import { Employee, selectEmployee, getEmployees } from "../shared"
+import { Employee, selectEmployee } from "../shared"
 import "./EmployeeList.style.css"
 
+/**
+ * @function
+ *
+ * @returns {JSX.Element}
+ */
 const EmployeeList = () => {
   const [filterText, setFilterText] = useState("")
   const [resetPaginationToggle, setResetPaginationToggle] =
     useState(false)
-
-  const dispatch = useDispatch()
 
   const employee = useSelector(selectEmployee)
 
@@ -57,12 +60,6 @@ const EmployeeList = () => {
       </FormField>
     )
   }, [filterText, resetPaginationToggle])
-
-  useEffect(() => {
-    if (employee.data === null) {
-      dispatch(getEmployees)
-    }
-  }, [dispatch, employee.data])
 
   return (
     <>

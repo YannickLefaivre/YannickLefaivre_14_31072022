@@ -1,6 +1,3 @@
 export { Employee } from "./data-formatters/Employee"
-export {
-  selectEmployee,
-  getEmployees,
-  saveEmployee,
-} from "./slices/employee"
+export * as employeeActions from "./slices/employee"
+export { selectEmployee } from "./slices/employee"
