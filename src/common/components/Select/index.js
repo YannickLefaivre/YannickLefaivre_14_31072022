@@ -1,3 +1,4 @@
 export { departmentOptions, statesOptions } from "./data/options"
-export { customSelectStyles } from "./utils/customStyles"
-export { SelectBase } from "./SelectBase"
+export { customSelectStyles } from "./styles/customStyles"
+export { SelectBase } from "./component/SelectBase"
+export { useSelect } from "./hooks/useSelect"

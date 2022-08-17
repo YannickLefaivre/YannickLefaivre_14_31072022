@@ -1,7 +1,8 @@
 export { FormField } from "./FormField"
-export { DatePickerBase } from "./Datepicker"
+export { DatePickerBase, useDatePicker } from "./Datepicker"
 export {
   SelectBase,
+  useSelect,
   departmentOptions,
   statesOptions,
 } from "./Select"

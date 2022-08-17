@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { NavLink, useNavigate } from "react-router-dom"
 import {
@@ -7,18 +6,18 @@ import {
   FormField,
   statesOptions,
   departmentOptions,
+  useSelect,
+  useDatePicker,
 } from "../../common/components"
 import { formatDate } from "../../common/utils/date"
 import { employeeActions } from "../shared"
 import "./CreateEmployee.style.css"
 
 const CreateEmployee = () => {
-  const [dateOfBirth, setDateOfBirth] = useState(null)
-  const [startDate, setStartDate] = useState(null)
-  const [selectedState, setSelectedState] = useState(statesOptions[0])
-  const [selectedDepartment, setSelectedDepartment] = useState(
-    departmentOptions[0]
-  )
+  const dateOfBirth = useDatePicker(null)
+  const startDate = useDatePicker(null)
+  const state = useSelect(statesOptions)
+  const department = useSelect(departmentOptions)
 
   const navigate = useNavigate()
 
@@ -43,12 +42,12 @@ const CreateEmployee = () => {
       return
     }
 
-    if (!dateOfBirth) {
+    if (!dateOfBirth.selected) {
       console.log("Some fields are empty")
       return
     }
 
-    if (!startDate) {
+    if (!startDate.selected) {
       console.log("Some fields are empty")
       return
     }
@@ -63,7 +62,7 @@ const CreateEmployee = () => {
       return
     }
 
-    if (!selectedState) {
+    if (!state.selectedOption) {
       console.log("Some fields are empty")
       return
     }
@@ -73,23 +72,23 @@ const CreateEmployee = () => {
       return
     }
 
-    if (!selectedDepartment) {
+    if (!department.selectedOption) {
       console.log("Some fields are empty")
       return
     }
 
-    const formattedDateOfBirth = formatDate(dateOfBirth)
-    const formattedstartDate = formatDate(startDate)
+    const formattedDateOfBirth = formatDate(dateOfBirth.selected)
+    const formattedstartDate = formatDate(startDate.selected)
 
     const employee = {
       firstName: firstName.value,
       lastName: lastName.value,
       dateOfBirth: formattedDateOfBirth,
       startDate: formattedstartDate,
-      department: selectedDepartment.value,
+      department: department.selectedOption.value,
       street: street.value,
       city: city.value,
-      state: selectedState.value,
+      state: state.selectedOption.value,
       zipCode: zipCode.value,
     }
 
@@ -127,15 +126,15 @@ const CreateEmployee = () => {
 
           <FormField label="Date of birth">
             <DatePicker
-              selectedValue={dateOfBirth}
-              handleChange={(date) => setDateOfBirth(date)}
+              selectedValue={dateOfBirth.selected}
+              handleChange={dateOfBirth.changeDate}
             />
           </FormField>
 
           <FormField label="Start date">
             <DatePicker
-              selectedValue={startDate}
-              handleChange={(date) => setStartDate(date)}
+              selectedValue={startDate.selected}
+              handleChange={startDate.changeDate}
             />
           </FormField>
 
@@ -152,8 +151,8 @@ const CreateEmployee = () => {
 
             <FormField label="State">
               <Select
-                value={selectedState}
-                handleChange={setSelectedState}
+                value={state.selectedOption}
+                handleChange={state.setSelectedOption}
                 options={statesOptions}
               />
             </FormField>
@@ -165,8 +164,8 @@ const CreateEmployee = () => {
 
           <FormField label="Department">
             <Select
-              value={selectedDepartment}
-              handleChange={setSelectedDepartment}
+              value={department.selectedOption}
+              handleChange={department.setSelectedOption}
               options={departmentOptions}
             />
           </FormField>

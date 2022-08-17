@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
-import { CustomDatepickerHeader } from "./custom-parts/CustomDatepickerHeader"
-import "./DatePickerBase.style.css"
+import { CustomDatepickerHeader } from "../custom-parts/CustomDatepickerHeader"
+import "../styles/DatePickerBase.css"
 
 /**
  * @callback handleChange
@@ -13,6 +13,8 @@ import "./DatePickerBase.style.css"
  */
 
 /**
+ * @function
+ *
  * @param {Object} [DatePickerBaseProps]
  * @param {Date | null} [DatePickerBaseProps.selectedValue]
  * @param {handleChange} [DatePickerBaseProps.handleChange]

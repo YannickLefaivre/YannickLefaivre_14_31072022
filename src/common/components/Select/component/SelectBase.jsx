@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import Select from "react-select"
-import { customSelectStyles } from "./utils/customStyles"
+import { customSelectStyles } from "../styles/customStyles"
 
 /**
  * @callback handleChange
@@ -17,6 +17,8 @@ import { customSelectStyles } from "./utils/customStyles"
  */
 
 /**
+ * @function
+ *
  * @param {Object} SelectProps
  * @param {SelectOptions[]} SelectProps.options
  * @param {*} [SelectProps.value]
