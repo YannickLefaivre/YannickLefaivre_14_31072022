@@ -113,15 +113,17 @@ const Form = ({ onSuccess, lastFocusedElementRef }) => {
         />
       </FormField>
 
-      <FormField label="Date of birth:">
+      <FormField label="Date of birth:" labelFor="date-of-birth">
         <DatePicker
+          inputId="date-of-birth"
           selectedValue={dateOfBirth.selected}
           handleChange={dateOfBirth.changeDate}
         />
       </FormField>
 
-      <FormField label="Start date:">
+      <FormField label="Start date:" labelFor="start-date">
         <DatePicker
+          inputId="start-date"
           selectedValue={startDate.selected}
           handleChange={startDate.changeDate}
         />
@@ -162,11 +164,13 @@ const Form = ({ onSuccess, lastFocusedElementRef }) => {
 
         <FormField
           label="State:"
+          labelFor="state"
           styleModifier={{
             label: "form-field__label--address-fieldset",
           }}
         >
           <Select
+            inputId="state"
             value={state.selectedOption}
             handleChange={state.setSelectedOption}
             options={statesOptions}
@@ -190,8 +194,9 @@ const Form = ({ onSuccess, lastFocusedElementRef }) => {
         </FormField>
       </fieldset>
 
-      <FormField label="Department:">
+      <FormField label="Department:" labelFor="department">
         <Select
+          inputId="department"
           value={department.selectedOption}
           handleChange={department.setSelectedOption}
           options={departmentOptions}

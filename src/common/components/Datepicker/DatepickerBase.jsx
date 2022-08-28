@@ -21,14 +21,16 @@ import "./DatePickerBase.css"
  * @function
  *
  * @param {Object} [DatePickerBaseProps]
+ * @param {String} [DatePickerBaseProps.inputId]
  * @param {Date | null} [DatePickerBaseProps.selectedValue]
  * @param {handleChange} [DatePickerBaseProps.handleChange]
  *
  * @returns {JSX.Element}
  */
-const DatePickerBase = ({ selectedValue, handleChange }) => {
+const DatePickerBase = ({ inputId, selectedValue, handleChange }) => {
   return (
     <DatePicker
+      id={inputId}
       selected={selectedValue}
       onChange={handleChange}
       required
@@ -62,6 +64,7 @@ const DatePickerBase = ({ selectedValue, handleChange }) => {
 }
 
 DatePickerBase.propTypes = {
+  inputId: PropTypes.string.isRequired,
   selectedValue: PropTypes.oneOfType([
     PropTypes.instanceOf(Date),
     PropTypes.any,
