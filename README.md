@@ -1,4 +1,4 @@
-# HRnet - Wealth Health employee census app
+# HRnet - Wealth Health Employee Records Management app
 
 This repo contains the code for the React version of a jQuery app.
 

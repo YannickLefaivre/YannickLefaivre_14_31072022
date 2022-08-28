@@ -56,15 +56,17 @@ const customSelectStyles = {
  * @function
  *
  * @param {Object} SelectProps
+ * @param {String} SelectProps.inputId
  * @param {Object[]} SelectProps.options [see Option type]{@link module:useSelect~Option}
  * @param {*} [SelectProps.value]
  * @param {handleChange} [SelectProps.handleChange]
  *
  * @returns {JSX.Element}
  */
-const SelectBase = ({ options, value, handleChange }) => {
+const SelectBase = ({ inputId, options, value, handleChange }) => {
   return (
     <Select
+      inputId={inputId}
       isSearchable={false}
       styles={customSelectStyles}
       value={value}
@@ -91,6 +93,7 @@ const SelectBase = ({ options, value, handleChange }) => {
 }
 
 Select.propTypes = {
+  inputId: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.object).isRequired,
   value: PropTypes.any,
   handleChange: PropTypes.func,
