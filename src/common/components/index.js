@@ -7,3 +7,4 @@ export {
   statesOptions,
 } from "./Select"
 export { DataTableBase, SearchBar } from "./Table"
+export { ModalBase, useModal } from "./Modal"

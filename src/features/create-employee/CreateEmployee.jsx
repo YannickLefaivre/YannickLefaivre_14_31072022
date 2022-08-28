@@ -1,11 +1,13 @@
 import { useDispatch } from "react-redux"
-import { NavLink, useNavigate } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import {
   SelectBase as Select,
   DatePickerBase as DatePicker,
+  ModalBase as Modal,
   FormField,
   statesOptions,
   departmentOptions,
+  useModal,
   useSelect,
   useDatePicker,
 } from "../../common/components"
@@ -18,8 +20,7 @@ const CreateEmployee = () => {
   const startDate = useDatePicker(null)
   const state = useSelect(statesOptions)
   const department = useSelect(departmentOptions)
-
-  const navigate = useNavigate()
+  const modal = useModal()
 
   const dispatch = useDispatch()
 
@@ -94,9 +95,7 @@ const CreateEmployee = () => {
 
     dispatch(employeeActions.save(employee))
 
-    navigate("/employee-list")
-
-    // $('#confirmation').modal(); Affiché la modale avec la lib HeadlessUIModal
+    modal.open()
   }
 
   return (
@@ -178,6 +177,8 @@ const CreateEmployee = () => {
           </button>
         </form>
       </div>
+
+      <Modal isOpen={modal.isOpen} handleClose={modal.close} />
     </>
   )
 }
