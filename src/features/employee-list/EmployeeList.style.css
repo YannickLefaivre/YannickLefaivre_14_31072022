@@ -1,0 +1,21 @@
+.form-field--data-table-search-bar {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  gap: 7px;
+}
+
+.form-field__label--data-table-search-bar {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 7px;
+}
+
+@media (min-width: 500px) {
+  .form-field--data-table-search-bar {
+    justify-content: flex-end;
+  }
+}

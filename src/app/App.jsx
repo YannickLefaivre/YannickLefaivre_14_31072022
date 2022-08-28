@@ -1,10 +1,20 @@
-import "./App.module.css"
+import { BrowserRouter } from "react-router-dom"
+import { Provider as ReduxStoreProvider } from "react-redux"
+import Router from "./Router"
+import store from "./store"
 
-function App() {
+/**
+ * @function
+ *
+ * @returns {JSX.Element}
+ */
+const App = () => {
   return (
-    <div className="App">
-      <h1>HRnet</h1>
-    </div>
+    <ReduxStoreProvider store={store}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ReduxStoreProvider>
   )
 }
 

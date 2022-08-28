@@ -1,8 +1,18 @@
+@import-normalize;
+
+@import "../node_modules/reasonable-colors/reasonable-colors-rgb.css";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: "Times New Roman", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +20,115 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+input,
+select {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input,
+label,
+p {
+  font-family: sans-serif;
+}
+
+a {
+  color: var(--color-indigo-3);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--color-indigo-2);
+}
+
+a:hover,
+a:focus,
+a:focus-visible {
+  color: var(--color-indigo-4);
+}
+
+a:focus,
+a:focus-visible {
+  outline: 0.0625rem solid var(--color-gray-1);
+  outline-offset: 0.1875rem;
+  border-radius: 0.1875rem;
+}
+
+a:active {
+  color: var(--color-indigo-3);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.main-content__title {
+  margin: 1.5rem 0rem 2rem;
+  font-size: 2rem;
+  color: black;
+}
+
+.button {
+  width: 5rem;
+  height: 2rem;
+  color: white;
+  background-color: black;
+  border: 1px solid var(--color-gray-3);
+  border-radius: 3px;
+  padding: 0.5em 1em;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus,
+.button:focus-visible {
+  outline: 1px solid var(--color-indigo-4);
+  outline-offset: 0px;
+}
+
+.button:active {
+  color: var(--color-gray-3);
+}
+
+.form-field__input {
+  width: 100%;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--color-gray-3);
+  border-radius: 3px;
+  font-size: 1rem;
+  color: var(--color-gray-6);
+}
+
+.form-field__input:hover {
+  outline: 1px solid var(--color-gray-4);
+  outline-offset: -1px;
+}
+
+.form-field__input:focus,
+.form-field__input:focus-visible {
+  outline: 2px solid black;
+  outline-offset: -1px;
+}
+
+@media (min-width: 950px) {
+  #root {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+  }
+}
+
+@media (min-width: 1440px) {
+  #root {
+    max-width: 1440px;
+    margin: 0px auto;
+  }
 }

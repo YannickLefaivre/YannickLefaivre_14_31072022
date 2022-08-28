@@ -1,0 +1,39 @@
+.react-datepicker__header__month-and-year-pickers {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-datepicker__header__month-and-year-picker__item {
+  margin-inline: 5px;
+}
+
+.react-datepicker__header__month-and-year-picker__navigation-button {
+  color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  border-radius: 5px;
+  border: 0 none;
+  padding: 0.3em 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+}
+
+.react-datepicker__header__month-and-year-picker__navigation-button__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.react-datepicker__header__month-and-year-picker__navigation-button:hover,
+.react-datepicker__header__month-and-year-picker__navigation-button:focus {
+  color: rgba(0, 0, 0, 0.7);
+  border: none;
+  outline: 1px solid rgb(0, 0, 0);
+  outline-offset: 0px;
+}
