@@ -1,20 +1,21 @@
+import PropTypes from "prop-types"
 import range from "lodash/range"
 import { getYear, getMonth } from "../../../utils/date"
-import "./CustomDatepickerHeader.style.css"
+import "./CustomHeader.css"
 
 /**
  * @param {Object} props
  * @param {Date} props.date
- * @param {CallableFunction} props.changeYear
- * @param {CallableFunction} props.changeMonth
- * @param {CallableFunction} props.decreaseMonth
- * @param {CallableFunction} props.increaseMonth
+ * @param {Function} props.changeYear
+ * @param {Function} props.changeMonth
+ * @param {Function} props.decreaseMonth
+ * @param {Function} props.increaseMonth
  * @param {Boolean} props.prevMonthDisabled
  * @param {Boolean} props.nextMonthButtonDisabled
  *
  * @returns {JSX.Element}
  */
-const CustomDatepickerHeader = ({
+const CustomHeader = ({
   date,
   changeYear,
   changeMonth,
@@ -88,4 +89,14 @@ const CustomDatepickerHeader = ({
   )
 }
 
-export { CustomDatepickerHeader }
+CustomHeader.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+  changeYear: PropTypes.func.isRequired,
+  changeMonth: PropTypes.func.isRequired,
+  decreaseMonth: PropTypes.func.isRequired,
+  increaseMonth: PropTypes.func.isRequired,
+  prevMonthButtonDisabled: PropTypes.bool.isRequired,
+  nextMonthButtonDisabled: PropTypes.bool.isRequired,
+}
+
+export { CustomHeader }

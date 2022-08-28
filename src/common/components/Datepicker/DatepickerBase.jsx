@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
-import { CustomDatepickerHeader } from "../custom-parts/CustomDatepickerHeader"
-import "../styles/DatePickerBase.css"
+import { CustomHeader } from "./custom-parts/CustomHeader"
+import "./DatePickerBase.css"
 
 /**
  * @callback handleChange
@@ -26,7 +26,10 @@ const DatePickerBase = ({ selectedValue, handleChange }) => {
     <DatePicker
       selected={selectedValue}
       onChange={handleChange}
-      renderCustomHeader={CustomDatepickerHeader}
+      required
+      placeholderText="Enter a date or use the date picker"
+      renderCustomHeader={CustomHeader}
+      className="form-field__input"
       highlightDates={[
         {
           "react-datepicker__day--highlighted-custom": [new Date()],
@@ -35,13 +38,13 @@ const DatePickerBase = ({ selectedValue, handleChange }) => {
       todayButton={<span className="fa-solid fa-house"></span>}
       fixedHeight
       strictParsing
-      showPopperArrow={false}
+      showPopperArrow
       popperPlacement="bottom-start"
       popperModifiers={[
         {
           name: "offset",
           options: {
-            offset: [0, -10],
+            offset: [15, 0],
           },
         },
         {
@@ -49,7 +52,6 @@ const DatePickerBase = ({ selectedValue, handleChange }) => {
           enabled: false,
         },
       ]}
-      required
     />
   )
 }

@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.form-field--address-fieldset__zip-code-field {
+  margin-bottom: 0rem;
+}
+
+.form-field__label--address-fieldset {
+  color: white;
+}
+
+.form-field__input--address-fieldset {
+  outline-color: var(--color-gray-4);
+}
+
+.form-field__input--address-fieldset:hover {
+  outline-color: var(--color-gray-5);
+}
+
+.address-fieldset {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1rem 1.3rem;
+  border: 0.0625rem solid var(--color-gray-6);
+  border-radius: 0.1875rem;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-lime-4);
+}
+
+.address-fieldset__legend {
+  font-size: 1.3rem;
+  color: black;
+  padding: 0.2rem;
+  border: 1px solid black;
+  border-radius: 0.1785rem;
+  background-color: var(--color-lime-1);
+}
+
+.button--save-employee {
+  margin: 1.3rem;
+  align-self: center;
+}

@@ -3,7 +3,12 @@ import { Provider as ReduxStoreProvider } from "react-redux"
 import Router from "./Router"
 import store from "./store"
 
-function App() {
+/**
+ * @function
+ *
+ * @returns {JSX.Element}
+ */
+const App = () => {
   return (
     <ReduxStoreProvider store={store}>
       <BrowserRouter>

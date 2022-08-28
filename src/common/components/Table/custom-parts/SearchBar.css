@@ -1,7 +1,7 @@
 .search-bar {
   display: grid;
   justify-items: center;
-  box-sizing: border-box;
+
   border-radius: 4px;
   padding: 3.5px;
   border: 1px inset #000;
@@ -13,7 +13,7 @@
 
 .search-bar__input {
   grid-row: 1;
-  box-sizing: border-box;
+  font-size: 1rem;
   grid-column: 1;
   border: 0;
 }
@@ -27,14 +27,19 @@
 .search-bar__clear-button {
   grid-row: 1;
   grid-column: 2;
+  width: auto;
+  height: auto;
+  padding: 0.3em 0.8em;
   border-radius: 5px;
   border: 0 inset;
   background: none;
+  color: black;
 }
 
 .search-bar__clear-button:hover,
 .search-bar__clear-button:focus-visible {
-  outline: 2px auto #000;
+  outline-color: #333;
+  outline: 2px auto black;
 }
 
 .search-bar__clear-button:active {

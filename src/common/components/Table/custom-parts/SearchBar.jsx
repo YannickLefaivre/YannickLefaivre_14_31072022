@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import "./SearchBar.style.css"
+import "./SearchBar.css"
 
 /**
  * @callback onFilterCallback
@@ -14,8 +14,8 @@ import "./SearchBar.style.css"
 /**
  * @param {Object} [SearchBarProps]
  * @param {String} [SearchBarProps.filterText=""]
- * @param {onFilterCallback} [SearchBarProps.onFilter=() => {}]
- * @param {onClearCallback} [SearchBarProps.onClear=() => {}]
+ * @param {onFilterCallback} [SearchBarProps.onFilter=(event) => {}]
+ * @param {onClearCallback} [SearchBarProps.onClear=(event) => {}]
  *
  *
  * @returns {JSX.Element}

@@ -1,22 +1,22 @@
 .react-datepicker__day:not(.react-datepicker__day--highlighted-custom, .react-datepicker__day--keyboard-selected, .react-datepicker__day--selected) {
   border-radius: 0.3rem;
-  background-color: rgb(var(--primary-color));
+  background-color: var(--color-gray-2);
 }
 
 .react-datepicker__day--highlighted-custom:not(.react-datepicker__day--keyboard-selected) {
-  color: rgb(var(--secondary-color));
-  background-color: rgb(var(--primary-color));
+  color: var(--color-indigo-4);
+  background-color: var(--color-gray-1);
 }
 
 .react-datepicker__day--selected,
 .react-datepicker__day--keyboard-selected {
   color: white;
-  background-color: rgb(var(--secondary-color));
+  background-color: var(--color-indigo-4);
 }
 
 .react-datepicker__day:hover {
   color: white;
-  background-color: rgb(var(--tertiary-color));
+  background-color: black;
 }
 
 .react-datepicker__day--outside-month {
