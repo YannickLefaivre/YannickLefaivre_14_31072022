@@ -41,6 +41,8 @@ const customSelectStyles = {
 }
 
 /**
+ * Change the value of the select when the user clicks on an option.
+ *
  * @callback handleChange
  * @param {*} newValue
  * @param {*} actionMeta
@@ -49,16 +51,12 @@ const customSelectStyles = {
  */
 
 /**
- * @typedef SelectOptions
- * @property {String} label
- * @property {String} value
- */
-
-/**
+ * Basic select design.
+ *
  * @function
  *
  * @param {Object} SelectProps
- * @param {SelectOptions[]} SelectProps.options
+ * @param {Object[]} SelectProps.options [see Option type]{@link module:useSelect~Option}
  * @param {*} [SelectProps.value]
  * @param {handleChange} [SelectProps.handleChange]
  *

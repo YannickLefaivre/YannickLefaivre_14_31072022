@@ -8,6 +8,8 @@ import {
 } from "../../common/components"
 
 /**
+ * Displays the employee creation page.
+ *
  * @function
  *
  * @returns {JSX.Element}

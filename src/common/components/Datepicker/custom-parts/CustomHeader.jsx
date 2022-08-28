@@ -4,6 +4,10 @@ import { getYear, getMonth } from "../../../utils/date"
 import "./CustomHeader.css"
 
 /**
+ * Displays the custom date picker header.
+ *
+ * @function
+ *
  * @param {Object} props
  * @param {Date} props.date
  * @param {Function} props.changeYear

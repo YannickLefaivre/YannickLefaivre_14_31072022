@@ -5,6 +5,9 @@ import { CustomHeader } from "./custom-parts/CustomHeader"
 import "./DatePickerBase.css"
 
 /**
+ * Change the value of the date picker when the user
+ * clicks on a date or enters one in the text field.
+ *
  * @callback handleChange
  * @param {Date | null} date
  * @param {React.SyntheticEvent<any, Event> | undefined} event
@@ -13,6 +16,8 @@ import "./DatePickerBase.css"
  */
 
 /**
+ * Basic date picker design.
+ *
  * @function
  *
  * @param {Object} [DatePickerBaseProps]

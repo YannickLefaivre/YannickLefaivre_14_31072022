@@ -67,11 +67,16 @@ const COLUMNS = [
  * @typedef {Object} DataTableBaseProps
  * @property {any[]} data
  * @property {number} defaultSortFieldId
+ *
  * @property {React.ReactNode} subHeaderComponent
+ * Displays the data table search bar
+ *
  * @property {React.ReactNode} noDataComponent
  */
 
 /**
+ * Basic data table design.
+ *
  * @function
  *
  * @param {DataTableBaseProps} DataTableBaseProps

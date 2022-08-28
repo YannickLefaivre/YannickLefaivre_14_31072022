@@ -11,6 +11,8 @@ import { Employee, selectEmployee } from "../shared"
 import "./EmployeeList.style.css"
 
 /**
+ * Displays the list of company employees.
+ *
  * @function
  *
  * @returns {JSX.Element}
