@@ -1,2 +1,2 @@
-export { DatePickerBase } from "./component/DatepickerBase"
+export { DatePickerBase } from "./DatepickerBase"
 export { useDatePicker } from "./hooks/useDatePicker"

@@ -1,4 +1,12 @@
-export const filterEmployees = (employeeList, userInput) => {
+/**
+ * @param {Object[]} employeeList
+ * @param {String} userInput
+ *
+ * @returns {Object[]} The list of employees that
+ * match the user's search or the initial list if
+ * the userInput parameter is an empty string.
+ */
+const filterEmployees = (employeeList, userInput) => {
   if (userInput) {
     let searchedEmployees = []
 
@@ -86,3 +94,5 @@ export const filterEmployees = (employeeList, userInput) => {
     return employeeList
   }
 }
+
+export { filterEmployees }

@@ -15,6 +15,8 @@ import { useState } from "react"
  */
 
 /**
+ * Manages the state of the date picker value.
+ *
  * @function
  *
  * @param {Date | null} date

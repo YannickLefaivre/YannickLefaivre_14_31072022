@@ -1,9 +1,9 @@
-import { useMemo, useState } from "react"
-import { NavLink } from "react-router-dom"
+import { useEffect, useMemo, useState } from "react"
 import { useSelector } from "react-redux"
 import {
   DataTableBase as DataTable,
   FormField,
+  NavigationBar,
   SearchBar,
 } from "../../common/components"
 import * as SearchEngine from "../../common/utils/SearchEngine"
@@ -11,6 +11,8 @@ import { Employee, selectEmployee } from "../shared"
 import "./EmployeeList.style.css"
 
 /**
+ * Displays the list of company employees.
+ *
  * @function
  *
  * @returns {JSX.Element}
@@ -61,10 +63,17 @@ const EmployeeList = () => {
     )
   }, [filterText, resetPaginationToggle])
 
+  useEffect(() => {
+    document.title = "Current Employees - HRnet"
+  })
+
   return (
     <>
-      <div id="employee-div" className="container">
-        <h1>Current Employees</h1>
+      <NavigationBar />
+
+      <main className="main-content">
+        <h1 className="main-content__title">Current Employees</h1>
+
         <DataTable
           data={employeeList}
           defaultSortFieldId={1}
@@ -77,8 +86,7 @@ const EmployeeList = () => {
             )
           }
         />
-        <NavLink to="/">Home</NavLink>
-      </div>
+      </main>
     </>
   )
 }

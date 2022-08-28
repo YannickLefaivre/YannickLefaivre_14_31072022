@@ -30,9 +30,9 @@ const FormField = ({
     >
       <label
         htmlFor={labelFor}
-        className={
-          styleModifier && styleModifier.label && styleModifier.label
-        }
+        className={`form-field__label${
+          styleModifier?.label ? ` ${styleModifier.label}` : ""
+        }`}
       >
         {label}
       </label>

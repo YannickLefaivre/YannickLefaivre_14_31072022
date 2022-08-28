@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> common/components/SlidingMenu/index.jsx</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-useSelect.html">useSelect</a></li></ul><h3>Classes</h3><ul><li><a href="Employee.html">Employee</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#COLUMNS">COLUMNS</a></li><li><a href="global.html#CreateEmployee">CreateEmployee</a></li><li><a href="global.html#CustomHeader">CustomHeader</a></li><li><a href="global.html#customSelectStyles">customSelectStyles</a></li><li><a href="global.html#DataTableBase">DataTableBase</a></li><li><a href="global.html#DatePickerBase">DatePickerBase</a></li><li><a href="global.html#EmployeeList">EmployeeList</a></li><li><a href="global.html#filterEmployees">filterEmployees</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#FormField">FormField</a></li><li><a href="global.html#SearchBar">SearchBar</a></li><li><a href="global.html#SelectBase">SelectBase</a></li><li><a href="global.html#SlidingMenu">SlidingMenu</a></li><li><a href="global.html#SuccessModal">SuccessModal</a></li><li><a href="global.html#useDatePicker">useDatePicker</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>common/components/SlidingMenu/index.jsx</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { NavLink } from "react-router-dom"
+import PropTypes from "prop-types"
+import "./style.css"
+
+/**
+ * @function
+ *
+ * @param {Object} SlidingMenuProps
+ * @param {Boolean} SlidingMenuProps.isOpen
+ * @param {Boolean} SlidingMenuProps.handleTheOpeningToggle
+ *
+ * @returns {JSX.Element}
+ */
+const SlidingMenu = ({ isOpen, handleTheOpeningToggle }) => {
+  return (
+    &lt;div
+      className={`dropdown-menu${
+        isOpen ? " dropdown-menu--open" : ""
+      }`}
+    >
+      &lt;button
+        type="button"
+        onClick={handleTheOpeningToggle}
+        className={`button dropdown-menu__button${
+          isOpen ? " dropdown-menu__button--menu-open" : ""
+        }`}
+      >
+        &lt;span className="dropdown-menu__button__label">Menu&lt;/span>
+        &lt;svg
+          aria-hidden
+          viewBox="0 0 320 512"
+          className={`dropdown-menu__button__icon${
+            isOpen ? " dropdown-menu__button__icon--menu-open" : ""
+          }`}
+        >
+          {/* &lt;!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --> */}
+          &lt;path
+            d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"
+            fill="currentColor"
+          />
+        &lt;/svg>
+      &lt;/button>
+
+      {isOpen &amp;&amp; (
+        &lt;ul className="dropdown-menu__links-list">
+          &lt;li className="dropdown-menu__links-list__item">
+            &lt;NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "dropdown-menu__links-list__item__link--active"
+                  : "dropdown-menu__links-list__item__link"
+              }
+            >
+              View Current Employees
+            &lt;/NavLink>
+          &lt;/li>
+
+          &lt;li className="dropdown-menu__links-list__item">
+            &lt;NavLink
+              to="/create-employee"
+              className={({ isActive }) =>
+                isActive
+                  ? "dropdown-menu__links-list__item__link--active"
+                  : "dropdown-menu__links-list__item__link"
+              }
+            >
+              Create Employee
+            &lt;/NavLink>
+          &lt;/li>
+        &lt;/ul>
+      )}
+    &lt;/div>
+  )
+}
+
+SlidingMenu.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  handleTheOpeningToggle: PropTypes.func.isRequired,
+}
+
+export { SlidingMenu }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

@@ -5,8 +5,12 @@ import EmployeeList from "../features/employee-list/EmployeeList"
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<CreateEmployee />} index />
-      <Route path="/employee-list" element={<EmployeeList />} />
+      <Route path="/" element={<EmployeeList />} index />
+      <Route
+        path="/create-employee"
+        element={<CreateEmployee />}
+        index
+      />
     </Routes>
   )
 }

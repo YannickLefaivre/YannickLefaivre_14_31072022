@@ -1,6 +1,10 @@
 import { useState } from "react"
 
 /**
+ * @module useSelect
+ */
+
+/**
  * @typedef {Object} Option
  * @property {String} label
  * @property {String} value
@@ -13,6 +17,8 @@ import { useState } from "react"
  */
 
 /**
+ * Manages the state of the select value.
+ *
  * @function
  *
  * @param {Option[] | null} options
